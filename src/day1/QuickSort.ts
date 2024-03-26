@@ -16,12 +16,14 @@ function partition(arr: number[], low: number, high: number): number {
         if (arr[i] <= pivot) {
             idx++;
 
+            // everything less than the pivot goes to the left
             const tmp = arr[i];
             arr[i] = arr[idx];
             arr[idx] = tmp;
         }
     }
 
+    // everything greater than the pivot value goes to the right
     idx++;
     arr[high] = arr[idx];
     arr[idx] = pivot;
